@@ -23,10 +23,12 @@ export default function OrderSuccessScreen() {
     await tapFeedback();
     const message = [
       "مرحبًا فريق LIONX، أريد تأكيد طلب يدوي.",
+      `نوع العملية: ${order?.operation === "wallet_topup" ? "شحن رصيد الحساب" : "دفع قيمة الطلب"}`,
       `رقم الطلب: ${orderId ?? "قيد الإنشاء"}`,
       `الإجمالي: ${order ? `${order.total} جنيه مصري` : "سيظهر في النظام"}`,
+      `رقم محفظة العميل: ${order?.customerWallet || "سيُراجع مع الفريق"}`,
       `حالة الطلب: ${order?.status ?? "بانتظار المراجعة"}`,
-      `إثبات التحويل: ${proofName || "سيُرسل عند توفره"}`,
+      `إثبات التحويل: ${proofName || order?.proofName || "سيُرسل عند توفره"}`,
       "أرفقت إثبات التحويل عبر شاشة الطلب إن كان متاحًا.",
       "أرجو مراجعة الطلب وإفادتي بالخطوة التالية.",
     ].join("\n");
@@ -46,7 +48,8 @@ export default function OrderSuccessScreen() {
         <View className="mt-5 rounded-2xl bg-background p-4">
           <Text className="text-center text-xs text-muted">رقم الطلب</Text>
           <Text className="mt-2 text-center text-lg font-black text-primary">{orderId ?? "قيد الإنشاء"}</Text>
-          <Text className="mt-2 text-center text-xs text-muted">{proofName ? `الإيصال: ${proofName}` : "لم يتم إرفاق إيصال بعد"}</Text>
+          <Text className="mt-2 text-center text-xs font-bold text-foreground">{order?.operation === "wallet_topup" ? "شحن رصيد الحساب" : "دفع قيمة الطلب"}</Text>
+          <Text className="mt-2 text-center text-xs text-muted">{proofName || order?.proofName ? `الإيصال: ${proofName || order?.proofName}` : "لم يتم إرفاق إيصال بعد"}</Text>
         </View>
         <Pressable onPress={sendToWhatsApp} style={({ pressed }) => [{ opacity: pressed ? 0.82 : 1 }]}>
           <View className="mt-5 items-center rounded-2xl bg-[#25D366] py-4">
