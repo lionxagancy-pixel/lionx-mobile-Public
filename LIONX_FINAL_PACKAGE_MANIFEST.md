@@ -53,6 +53,6 @@ pnpm build
 
 ## GitHub Pages
 
-ملف `.github/workflows/deploy-pages.yml` موجود للنشر التلقائي. يجب أن يفعّل مالك المستودع GitHub Pages من **Settings → Pages → Source → GitHub Actions**. بعد التفعيل، يكون رابط Pages المتوقع:
+ملف `.github/workflows/deploy-pages.yml` موجود للنشر التلقائي، وتم ضبط `experiments.baseUrl` في `app.config.ts` على `/lionx-mobile-Public` حتى يفهم Expo Router مسار المستودع. سكربت `scripts/prepare-github-pages.py` يجهز المسارات النظيفة بطريقة آمنة عند تكرار التشغيل. يجب أن يفعّل مالك المستودع GitHub Pages من **Settings → Pages → Source → GitHub Actions**. بعد التفعيل، يكون رابط Pages:
 
 `https://lionxagancy-pixel.github.io/lionx-mobile-Public/`
