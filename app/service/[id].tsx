@@ -4,6 +4,10 @@ import { ScreenContainer } from "@/components/screen-container";
 import { services, formatEgp } from "@/shared/catalog";
 import { useLionxStore } from "@/lib/lionx-store";
 
+export function generateStaticParams() {
+  return [{ id: "demo" }];
+}
+
 export default function ServiceDetailsScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();

@@ -5,6 +5,10 @@ import { formatEgp, mallPillars, services } from "@/shared/catalog";
 
 const categoryMap: Record<string, string[]> = { play: ["gaming", "coins", "gift"], pay: ["coins", "gift"], grow: ["smm", "web"], digital: ["subs", "web"], vip: ["vip"] };
 
+export function generateStaticParams() {
+  return [{ id: "demo" }];
+}
+
 export default function SectorScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();

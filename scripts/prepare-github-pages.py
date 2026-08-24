@@ -14,10 +14,11 @@ for html_path in ROOT.rglob("*.html"):
     html_path.write_text(text, encoding="utf-8")
 
 # GitHub Pages serves clean route URLs from directory index files.
-for html_path in list(ROOT.glob("*.html")):
+# Handle top-level and nested route HTML files, e.g. admin/suppliers.html -> admin/suppliers/index.html.
+for html_path in list(ROOT.rglob("*.html")):
     if html_path.name in {"index.html", "404.html"}:
         continue
-    route_dir = ROOT / html_path.stem
+    route_dir = html_path.with_suffix("")
     route_dir.mkdir(parents=True, exist_ok=True)
     shutil.copy2(html_path, route_dir / "index.html")
 

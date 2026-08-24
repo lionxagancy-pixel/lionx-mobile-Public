@@ -18,6 +18,10 @@ const content: Record<string, { eyebrow: string; title: string; intro: string; c
   wishlist: { eyebrow: "WISHLIST", title: "المفضلة", intro: "احفظ الخدمات التي تريد مراجعتها لاحقًا. التخزين السحابي يحتاج حسابًا ومزامنة في مرحلة لاحقة.", cards: [{ title: "قائمة محلية", body: "يمكن توسيعها لاحقًا باستخدام AsyncStorage أو حساب LIONX." }] },
 };
 
+export function generateStaticParams() {
+  return [{ slug: "demo" }];
+}
+
 export default function ContentScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const router = useRouter();
