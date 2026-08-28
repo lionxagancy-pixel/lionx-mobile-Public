@@ -45,7 +45,7 @@
 - `pnpm test`: ناجح؛ 6 اختبارات ناجحة و1 متجاوز موجود مسبقًا.
 - `pnpm build`: ناجح؛ Expo Web صدّر 69 مسارًا ثابتًا.
 - تم التأكد من وجود `web-dist/assets/data/catalog.json` بعدد 2,812 خدمة.
-- تم التأكد من وجود `web-dist/store/index.html` و`web-dist/service/demo/index.html`.
+- تم التأكد من وجود `web-dist/store/index.html` و`web-dist/service/demo/index.html`، وأن سكربت `prepare-github-pages.py` يحوّل روابط الصفحات المتداخلة إلى مسارات مطلقة صحيحة تحت `/lionx-mobile-Public/`.
 - تم التأكد من وجود أصول محلية لـNetflix وSpotify ضمن `web-dist/assets/catalog`، واختبار وصول PNG الخاص بـNetflix عبر HTTP 200 بعد النشر السابق.
 
 ## حدود التنفيذ

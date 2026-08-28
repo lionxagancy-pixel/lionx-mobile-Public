@@ -7,8 +7,9 @@ ROOT = Path("web-dist")
 
 for html_path in ROOT.rglob("*.html"):
     text = html_path.read_text(encoding="utf-8")
-    # Normalize any existing prefix first so the script is safe to run repeatedly.
+    # Normalize absolute and relative prefixes first so nested pages remain valid.
     text = re.sub(rf'(href|src)="(?:{re.escape(BASE)}/)+', r'\1="/', text)
+    text = re.sub(rf'(href|src)="(?:\./)?{re.escape(BASE.lstrip("/"))}/', r'\1="/', text)
     text = text.replace('href="/', f'href="{BASE}/')
     text = text.replace('src="/', f'src="{BASE}/')
     html_path.write_text(text, encoding="utf-8")
