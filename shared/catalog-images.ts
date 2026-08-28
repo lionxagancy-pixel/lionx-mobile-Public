@@ -45,6 +45,8 @@ export const localCatalogImages: Record<string, CatalogImageAsset> = {
   "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg": asset("x_logo_2023-10b53cbce6c0.png", require("@/public/assets/catalog/x_logo_2023-10b53cbce6c0.png")),
 };
 
+export const getCatalogImageWebPath = (sourceUrl: string): string | undefined => localCatalogImages[sourceUrl]?.web;
+
 export const getCatalogImageSource = (sourceUrl: string): ImageSourcePropType | undefined => {
   const local = localCatalogImages[sourceUrl];
   if (!local) return undefined;

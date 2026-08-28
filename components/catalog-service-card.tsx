@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { Image, Platform, Pressable, StyleSheet, Text, View } from "react-native";
+import { useState, type CSSProperties } from "react";
+import { Image, Platform, Pressable, StyleSheet, Text, View, type ImageStyle } from "react-native";
 import { useRouter } from "expo-router";
 import type { CatalogService } from "@/shared/catalog";
-import { getCatalogImageSource } from "@/shared/catalog-images";
+import { getCatalogImageSource, getCatalogImageWebPath } from "@/shared/catalog-images";
 import { formatEgp } from "@/shared/catalog";
 
 const sectorLabel: Record<string, string> = {
@@ -17,6 +17,7 @@ export function CatalogServiceCard({ item }: { item: CatalogService }) {
   const router = useRouter();
   const [hovered, setHovered] = useState(false);
   const imageSource = getCatalogImageSource(item.image) ?? { uri: item.image };
+  const webImagePath = getCatalogImageWebPath(item.image) ?? item.image;
   const sector = item.sector.toUpperCase();
   return (
     <Pressable
@@ -31,7 +32,15 @@ export function CatalogServiceCard({ item }: { item: CatalogService }) {
     >
       <View style={styles.card}>
         <View style={styles.imageWrap}>
-          <Image source={imageSource} resizeMode="contain" style={styles.image} />
+          {Platform.OS === "web" ? (
+            <img
+              src={webImagePath}
+              alt={item.originalBrand || item.name}
+              style={webImageStyle}
+            />
+          ) : (
+            <Image source={imageSource} resizeMode="contain" style={styles.image as ImageStyle} />
+          )}
           <View style={styles.badge}>
             <Text style={styles.badgeText}>{sectorLabel[sector] ?? sector}</Text>
           </View>
@@ -46,6 +55,8 @@ export function CatalogServiceCard({ item }: { item: CatalogService }) {
     </Pressable>
   );
 }
+
+const webImageStyle: CSSProperties = { width: "100%", height: "100%", objectFit: "contain", display: "block" };
 
 const styles = StyleSheet.create({
   pressable: {
