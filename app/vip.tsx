@@ -1,5 +1,5 @@
-import { ArchitecturePage } from "@/components/architecture-page";
+import { SectorCatalogPage } from "@/components/sector-catalog-page";
 
-export default function Page() {
-  return <ArchitecturePage pageKey="vip" />;
+export default function VipPage() {
+  return <SectorCatalogPage sector="VIP" />;
 }

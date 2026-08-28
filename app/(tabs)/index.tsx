@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
-import { FlatList, Pressable, ScrollView, Text, TextInput, View } from "react-native";
+import { FlatList, Platform, Pressable, ScrollView, Text, TextInput, View } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { SocialFooter } from "@/components/social-footer";
-import { audiencePaths, categories, formatEgp, mallPillars, services } from "@/shared/catalog";
+import { CatalogServiceCard } from "@/components/catalog-service-card";
+import { audiencePaths, categories, mallPillars, services } from "@/shared/catalog";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function HomeScreen() {
       <FlatList
         data={filtered}
         keyExtractor={(item) => item.id}
-        numColumns={2}
+        numColumns={Platform.OS === "web" ? 4 : 2}
         columnWrapperStyle={{ gap: 12 }}
         contentContainerStyle={{ gap: 12, paddingBottom: 28 }}
         ListHeaderComponent={
@@ -47,7 +48,7 @@ export default function HomeScreen() {
               <Text className="mt-2 text-3xl font-black leading-9 text-foreground">كل خدمة رقمية،{"\n"}بلمسة واحدة.</Text>
               <Text className="mt-2 text-sm leading-5 text-muted">شحن فوري، ضمان ذهبي، وتجربة مصممة لك.</Text>
               <View className="mt-5 flex-row gap-2">
-                {["2,812 خدمة", "15 قسمًا", "تأكيد يدوي"].map((stat) => <View key={stat} className="rounded-xl bg-background px-2.5 py-2"><Text className="text-[10px] font-bold text-primary">{stat}</Text></View>)}
+                {[`${services.length.toLocaleString("en-US")} خدمة`, "15 قسمًا", "تأكيد يدوي"].map((stat) => <View key={stat} className="rounded-xl bg-background px-2.5 py-2"><Text className="text-[10px] font-bold text-primary">{stat}</Text></View>)}
               </View>
             </View>
             <View className="flex-row items-center rounded-2xl border border-border bg-surface px-4">
@@ -105,16 +106,7 @@ export default function HomeScreen() {
             </View>
           </View>
         }
-        renderItem={({ item }) => (
-          <Pressable onPress={() => router.push({ pathname: "/service/[id]", params: { id: item.id } })} style={({ pressed }) => [{ flex: 1, opacity: pressed ? 0.72 : 1 }]}>
-            <View className="min-h-[190px] rounded-3xl border border-border bg-surface p-3">
-              <View className="h-20 items-center justify-center rounded-2xl bg-background"><Text className="text-3xl font-black text-primary">{item.id.split("-")[0]}</Text></View>
-              <Text className="mt-3 text-sm font-black text-foreground" numberOfLines={1}>{item.name}</Text>
-              <Text className="mt-1 text-[11px] text-muted" numberOfLines={1}>{item.subtitle}</Text>
-              <View className="mt-auto flex-row items-end justify-between pt-3"><Text className="text-sm font-black text-primary">{formatEgp(item.price)}</Text><Text className="text-[10px] font-bold text-success">{item.eta}</Text></View>
-            </View>
-          </Pressable>
-        )}
+        renderItem={({ item }) => <CatalogServiceCard item={item} />}
         ListEmptyComponent={<View className="items-center py-10"><Text className="font-bold text-foreground">لا توجد خدمات مطابقة</Text><Text className="mt-2 text-sm text-muted">جرّب كلمة بحث أو تصنيفًا آخر.</Text></View>}
         ListFooterComponent={<SocialFooter />}
       />
