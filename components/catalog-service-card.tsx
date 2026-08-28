@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Image, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import type { CatalogService } from "@/shared/catalog";
-import { localCatalogImages } from "@/shared/catalog-images";
+import { getCatalogImageSource } from "@/shared/catalog-images";
 import { formatEgp } from "@/shared/catalog";
 
 const sectorLabel: Record<string, string> = {
@@ -16,7 +16,7 @@ const sectorLabel: Record<string, string> = {
 export function CatalogServiceCard({ item }: { item: CatalogService }) {
   const router = useRouter();
   const [hovered, setHovered] = useState(false);
-  const imageSource = localCatalogImages[item.image] ?? { uri: item.image };
+  const imageSource = getCatalogImageSource(item.image) ?? { uri: item.image };
   const sector = item.sector.toUpperCase();
   return (
     <Pressable

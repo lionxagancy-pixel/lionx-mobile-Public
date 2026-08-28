@@ -32,7 +32,7 @@
 - `public/assets/data/catalog.csv`: نسخة CSV المرجعية.
 - `shared/full-catalog.ts`: تصدير `FULL_CATALOG` من JSON.
 - `shared/catalog.ts`: اشتقاق `services` وعدادات القطاعات من `FULL_CATALOG` مع الحفاظ على توافق الفلاتر الحالية.
-- `shared/catalog-images.ts`: خريطة الصور المحلية مع fallback للمصدر الأصلي.
+- `shared/catalog-images.ts`: خريطة الصور المحلية مع URI صريح لمسار GitHub Pages على Web و`require` للموبايل، مع fallback للمصدر الأصلي.
 - `components/catalog-service-card.tsx`: كارت موحد بتصميم أبيض عائم، حد `#D4AF37`، ظل، `object-contain`، badge القطاع، اسم أسود bold، سعر ذهبي، ووقت تسليم رمادي.
 - `components/sector-catalog-page.tsx`: شبكة قطاعية مشتركة للموبايل والويب.
 - `app/(tabs)/store.tsx` و`app/(tabs)/index.tsx`: قراءة الكتالوج الكامل وشبكة 2 عمود للموبايل و4 للويب.
@@ -46,7 +46,7 @@
 - `pnpm build`: ناجح؛ Expo Web صدّر 69 مسارًا ثابتًا.
 - تم التأكد من وجود `web-dist/assets/data/catalog.json` بعدد 2,812 خدمة.
 - تم التأكد من وجود `web-dist/store/index.html` و`web-dist/service/demo/index.html`.
-- تم التأكد من وجود أصول محلية لـNetflix وSpotify ضمن `web-dist/assets/catalog`.
+- تم التأكد من وجود أصول محلية لـNetflix وSpotify ضمن `web-dist/assets/catalog`، واختبار وصول PNG الخاص بـNetflix عبر HTTP 200 بعد النشر السابق.
 
 ## حدود التنفيذ
 

@@ -124,7 +124,7 @@ const config: ExpoConfig = {
   experiments: {
     typedRoutes: true,
     reactCompiler: true,
-    baseUrl: "/lionx-mobile-Public",
+    baseUrl: "lionx-mobile-Public",
   },
 };
 
