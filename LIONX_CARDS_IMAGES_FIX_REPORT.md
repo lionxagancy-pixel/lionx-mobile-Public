@@ -51,3 +51,10 @@
 ## حدود التنفيذ
 
 لم تتغير الألوان أو الفوتر أو صفحة الدفع. لم تتم إضافة Paymob أو أي دفع آلي، ولم توضع API Keys داخل الكود. لا تزال الأسعار `0` كما طلب المستخدم، وVIP لا يحتوي خدمات في ملف الكتالوج الحالي رغم وجود مساره وفلتره.
+
+## Store information architecture update
+
+- The store home now presents five LIONX pillars first: PLAY, PAY, GROW, DIGITAL, and VIP.
+- It shows a small set of suggested services per pillar, followed by popular brand chips and a deliberate search/category mode.
+- Search and category results are paginated in batches of 24 to avoid rendering all 2,812 services in one view.
+- The card visuals and original catalog image mapping remain unchanged; no pricing, footer, payment, or WhatsApp behavior was changed.
