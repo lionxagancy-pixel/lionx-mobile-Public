@@ -24,18 +24,6 @@
     "error": null
   },
   {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Canva_Logo.jpg/1024px-Canva_Logo.jpg",
-    "local_file": null,
-    "status": "failed",
-    "error": "400 Client Error: Use thumbnail sizes listed on https://w.wiki/GHai for url: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Canva_Logo.jpg/1024px-Canva_Logo.jpg"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Creative_Cloud_rainbow_icon.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "404 Client Error: Not Found for url: https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Creative_Cloud_rainbow_icon.svg"
-  },
-  {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/25/Microsoft_icon.svg",
     "local_file": "/assets/catalog/microsoft_icon-234f0ee6305c.png",
     "status": "downloaded",
@@ -60,40 +48,16 @@
     "error": null
   },
   {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Discord_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "404 Client Error: Not Found for url: https://upload.wikimedia.org/wikipedia/commons/5/57/Discord_logo.svg"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/2/f0/Twitch_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "404 Client Error: Not Found for url: https://upload.wikimedia.org/wikipedia/commons/2/f0/Twitch_logo.svg"
-  },
-  {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PUBG_Mobile_simple_logo_black.svg/1280px-PUBG_Mobile_simple_logo_black.svg.png",
     "local_file": "/assets/catalog/1280px-pubg_mobile_simple_logo_black-svg-53b0f3a2dba4.png",
     "status": "downloaded",
     "error": null
   },
   {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Garena_Free_Fire_logo.png",
-    "local_file": null,
-    "status": "failed",
-    "error": "404 Client Error: Not Found for url: https://upload.wikimedia.org/wikipedia/commons/0/0c/Garena_Free_Fire_logo.png"
-  },
-  {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Valorant_logo_-_black_color_version.svg/1280px-Valorant_logo_-_black_color_version.svg.png",
     "local_file": "/assets/catalog/1280px-valorant_logo_-_black_color_version-svg-f4c4268a4db5.png",
     "status": "downloaded",
     "error": null
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Roblox_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "404 Client Error: Not Found for url: https://upload.wikimedia.org/wikipedia/commons/6/60/Roblox_logo.svg"
   },
   {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg",
@@ -114,64 +78,16 @@
     "error": null
   },
   {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Call_of_Duty_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "404 Client Error: Not Found for url: https://upload.wikimedia.org/wikipedia/commons/7/7d/Call_of_Duty_logo.svg"
-  },
-  {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Fortnite_F_lettermark_logo.png",
     "local_file": "/assets/catalog/fortnite_f_lettermark_logo-bf8f885dfaae.png",
     "status": "downloaded",
     "error": null
   },
   {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/League_of_Legends_Logo_2023.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/d/d9/League_of_Legends_Logo_2023.svg"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mobile_Legends_Bang_Bang_logo.png",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/0/0c/Mobile_Legends_Bang_Bang_logo.png"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Genshin_Impact_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/7/7b/Genshin_Impact_logo.svg"
-  },
-  {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg",
     "local_file": "/assets/catalog/paypal-41c1b94d716b.png",
     "status": "downloaded",
     "error": null
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Payoneer_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/8/84/Payoneer_logo.svg"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Skrill_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/8/86/Skrill_logo.svg"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Neteller_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/7/7a/Neteller_logo.svg"
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Perfect_Money_logo.png",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/3/3f/Perfect_Money_logo.png"
   },
   {
     "source_url": "https://cryptologos.cc/logos/tether-usdt-logo.png",
@@ -186,22 +102,10 @@
     "error": null
   },
   {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Wise_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/3/3b/Wise_logo.svg"
-  },
-  {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg",
     "local_file": "/assets/catalog/instagram_logo_2016-ac4f32073568.png",
     "status": "downloaded",
     "error": null
-  },
-  {
-    "source_url": "https://upload.wikimedia.org/wikipedia/commons/a/9f/TikTok_logo.svg",
-    "local_file": null,
-    "status": "failed",
-    "error": "429 Client Error: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1) for url: https://upload.wikimedia.org/wikipedia/commons/a/9f/TikTok_logo.svg"
   },
   {
     "source_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
@@ -226,5 +130,133 @@
     "local_file": "/assets/catalog/x_logo_2023-10b53cbce6c0.png",
     "status": "downloaded",
     "error": null
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=canva.com&sz=256",
+    "local_file": "/assets/catalog/canva-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "official-domain-favicon",
+    "sha256_12": "abe91bb8a2dd"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=adobe.com&sz=256",
+    "local_file": "/assets/catalog/adobe-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "official-domain-favicon",
+    "sha256_12": "529b9525ecaf"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/discord/5865F2",
+    "local_file": "/assets/catalog/discord-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "b17431dc6bdc"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/twitch/9146FF",
+    "local_file": "/assets/catalog/twitch-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "7281811bef27"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=garena.com&sz=256",
+    "local_file": "/assets/catalog/garena-free-fire-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "public-image-search:vuQi28aBAeiz.png",
+    "sha256_12": "0ac299c40f01"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/roblox/000000",
+    "local_file": "/assets/catalog/roblox-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "a8d060b7b43c"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=callofduty.com&sz=256",
+    "local_file": "/assets/catalog/call-of-duty-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "public-image-search:RrXCBQb8R6sx.png",
+    "sha256_12": "86b032d4b469"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/leagueoflegends/C89B3C",
+    "local_file": "/assets/catalog/league-of-legends-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "dce144ce6ea9"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=mobilelegends.com&sz=256",
+    "local_file": "/assets/catalog/mobile-legends-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "public-image-search:2bARGJ2shBXZ.png",
+    "sha256_12": "6b03801fc697"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=genshin.hoyoverse.com&sz=256",
+    "local_file": "/assets/catalog/genshin-impact-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "public-image-search:ZjKDZvL3hkgr.png",
+    "sha256_12": "115f6ea3e7c1"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/payoneer/FF4800",
+    "local_file": "/assets/catalog/payoneer-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "0fc96cee7bac"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=skrill.com&sz=256",
+    "local_file": "/assets/catalog/skrill-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "official-domain-favicon",
+    "sha256_12": "8515192a5352"
+  },
+  {
+    "source_url": "https://www.google.com/s2/favicons?domain=neteller.com&sz=256",
+    "local_file": "/assets/catalog/neteller-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "public-image-search:RpgmfAeh0UBf.png",
+    "sha256_12": "1f230f0dd8a9"
+  },
+  {
+    "source_url": "https://www.perfectmoney.com/favicon.ico",
+    "local_file": "/assets/catalog/perfect-money-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "public-image-search:koIKdFcnim7f.png",
+    "sha256_12": "10930138c0e0"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/wise/9FE870",
+    "local_file": "/assets/catalog/wise-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "43f4f6600eed"
+  },
+  {
+    "source_url": "https://cdn.simpleicons.org/tiktok/000000",
+    "local_file": "/assets/catalog/tiktok-brand.png",
+    "status": "downloaded",
+    "error": null,
+    "source_kind": "simpleicons-cdn",
+    "sha256_12": "f45beacadf11"
   }
 ]

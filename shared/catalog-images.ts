@@ -1,5 +1,4 @@
-import type { ImageSourcePropType } from "react-native";
-import { Platform } from "react-native";
+import { Platform, type ImageSourcePropType } from "react-native";
 
 type CatalogImageAsset = {
   native: ImageSourcePropType;
@@ -43,6 +42,22 @@ export const localCatalogImages: Record<string, CatalogImageAsset> = {
   "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg": asset("facebook_f_logo_-282019-29-06d16a16e562.png", require("@/public/assets/catalog/facebook_f_logo_-282019-29-06d16a16e562.png")),
   "https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg": asset("telegram_logo-c0c3b68546e9.png", require("@/public/assets/catalog/telegram_logo-c0c3b68546e9.png")),
   "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg": asset("x_logo_2023-10b53cbce6c0.png", require("@/public/assets/catalog/x_logo_2023-10b53cbce6c0.png")),
+  "https://www.google.com/s2/favicons?domain=canva.com&sz=256": asset("canva-brand.png", require("@/public/assets/catalog/canva-brand.png")),
+  "https://www.google.com/s2/favicons?domain=adobe.com&sz=256": asset("adobe-brand.png", require("@/public/assets/catalog/adobe-brand.png")),
+  "https://cdn.simpleicons.org/discord/5865F2": asset("discord-brand.png", require("@/public/assets/catalog/discord-brand.png")),
+  "https://cdn.simpleicons.org/twitch/9146FF": asset("twitch-brand.png", require("@/public/assets/catalog/twitch-brand.png")),
+  "https://www.google.com/s2/favicons?domain=garena.com&sz=256": asset("garena-free-fire-brand.png", require("@/public/assets/catalog/garena-free-fire-brand.png")),
+  "https://cdn.simpleicons.org/roblox/000000": asset("roblox-brand.png", require("@/public/assets/catalog/roblox-brand.png")),
+  "https://www.google.com/s2/favicons?domain=callofduty.com&sz=256": asset("call-of-duty-brand.png", require("@/public/assets/catalog/call-of-duty-brand.png")),
+  "https://cdn.simpleicons.org/leagueoflegends/C89B3C": asset("league-of-legends-brand.png", require("@/public/assets/catalog/league-of-legends-brand.png")),
+  "https://www.google.com/s2/favicons?domain=mobilelegends.com&sz=256": asset("mobile-legends-brand.png", require("@/public/assets/catalog/mobile-legends-brand.png")),
+  "https://www.google.com/s2/favicons?domain=genshin.hoyoverse.com&sz=256": asset("genshin-impact-brand.png", require("@/public/assets/catalog/genshin-impact-brand.png")),
+  "https://cdn.simpleicons.org/payoneer/FF4800": asset("payoneer-brand.png", require("@/public/assets/catalog/payoneer-brand.png")),
+  "https://www.google.com/s2/favicons?domain=skrill.com&sz=256": asset("skrill-brand.png", require("@/public/assets/catalog/skrill-brand.png")),
+  "https://www.google.com/s2/favicons?domain=neteller.com&sz=256": asset("neteller-brand.png", require("@/public/assets/catalog/neteller-brand.png")),
+  "https://www.perfectmoney.com/favicon.ico": asset("perfect-money-brand.png", require("@/public/assets/catalog/perfect-money-brand.png")),
+  "https://cdn.simpleicons.org/wise/9FE870": asset("wise-brand.png", require("@/public/assets/catalog/wise-brand.png")),
+  "https://cdn.simpleicons.org/tiktok/000000": asset("tiktok-brand.png", require("@/public/assets/catalog/tiktok-brand.png")),
 };
 
 export const getCatalogImageWebPath = (sourceUrl: string): string | undefined => localCatalogImages[sourceUrl]?.web;
