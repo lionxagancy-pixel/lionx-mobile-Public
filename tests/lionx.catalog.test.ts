@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { categories, formatEgp, mallPillars, services } from "../shared/catalog";
+import { catalogBrands, categories, formatEgp, mallPillars, services } from "../shared/catalog";
 import { buildManualReviewEvents } from "../shared/order-rules";
 
 describe("LIONX catalog", () => {
@@ -11,6 +11,13 @@ describe("LIONX catalog", () => {
     const gaming = services.filter((service) => service.category === "gaming");
     expect(gaming.length).toBeGreaterThan(0);
     expect(categories.some((category) => category.id === "gaming")).toBe(true);
+  });
+
+  it("groups each brand once while preserving its package choices", () => {
+    expect(catalogBrands.length).toBeGreaterThan(0);
+    expect(new Set(catalogBrands.map((brand) => `${brand.sector}:${brand.originalBrand}`)).size).toBe(catalogBrands.length);
+    expect(catalogBrands.find((brand) => brand.originalBrand === "Netflix Premium")?.packages).toHaveLength(74);
+    expect(catalogBrands.find((brand) => brand.originalBrand === "Spotify Premium")?.packages).toHaveLength(74);
   });
 
   it("formats prices in Egyptian pounds", () => {

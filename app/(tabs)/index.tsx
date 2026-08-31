@@ -4,16 +4,17 @@ import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { SocialFooter } from "@/components/social-footer";
-import { CatalogServiceCard } from "@/components/catalog-service-card";
-import { audiencePaths, categories, mallPillars, services } from "@/shared/catalog";
+import { CatalogBrandCard } from "@/components/catalog-brand-card";
+import { audiencePaths, catalogBrands, categories, mallPillars, services } from "@/shared/catalog";
 
 export default function HomeScreen() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
-  const filtered = useMemo(() => services.filter((service) => {
-    const matchesCategory = activeCategory === "all" || service.category === activeCategory;
-    const haystack = `${service.name} ${service.id} ${service.subtitle}`.toLowerCase();
+  const filtered = useMemo(() => catalogBrands.filter((brand) => {
+    const matchesCategory = activeCategory === "all" || brand.category === activeCategory;
+    const packageNames = brand.packages.map((item) => item.name).join(" ");
+    const haystack = `${brand.name} ${brand.id} ${brand.description} ${packageNames}`.toLowerCase();
     return matchesCategory && haystack.includes(query.toLowerCase());
   }), [activeCategory, query]);
 
@@ -106,7 +107,7 @@ export default function HomeScreen() {
             </View>
           </View>
         }
-        renderItem={({ item }) => <CatalogServiceCard item={item} />}
+        renderItem={({ item }) => <CatalogBrandCard brand={item} />}
         ListEmptyComponent={<View className="items-center py-10"><Text className="font-bold text-foreground">لا توجد خدمات مطابقة</Text><Text className="mt-2 text-sm text-muted">جرّب كلمة بحث أو تصنيفًا آخر.</Text></View>}
         ListFooterComponent={<SocialFooter />}
       />

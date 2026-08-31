@@ -23,6 +23,18 @@ export type CatalogService = FullCatalogService & {
   tag: string;
 };
 
+export type CatalogBrand = {
+  id: string;
+  name: string;
+  originalBrand: string;
+  sector: string;
+  category: CatalogService["category"];
+  image: string;
+  description: string;
+  deliveryTime: string;
+  packages: CatalogService[];
+};
+
 const categoryMeta: Record<CatalogCategory["id"], { label: string; icon: string; sector?: string }> = {
   all: { label: "الكل", icon: "apps" },
   gaming: { label: "PLAY · الألعاب", icon: "sports-esports", sector: "PLAY" },
@@ -41,6 +53,13 @@ const categoryForSector = (sector: string): CatalogService["category"] => {
   return "vip";
 };
 
+const slugifyBrand = (value: string) =>
+  value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "") || "brand";
+
 export const services: CatalogService[] = FULL_CATALOG.map((item) => ({
   ...item,
   category: categoryForSector(item.sector),
@@ -48,6 +67,37 @@ export const services: CatalogService[] = FULL_CATALOG.map((item) => ({
   eta: item.deliveryTime,
   tag: item.originalBrand,
 }));
+
+const groupedBrands = new Map<string, CatalogService[]>();
+services.forEach((service) => {
+  const key = `${service.sector.toUpperCase()}::${service.originalBrand}`;
+  const current = groupedBrands.get(key) ?? [];
+  current.push(service);
+  groupedBrands.set(key, current);
+});
+
+export const catalogBrands: CatalogBrand[] = Array.from(groupedBrands.entries()).map(([key, packages]) => {
+  const first = packages[0];
+  return {
+    id: `${slugifyBrand(first.originalBrand)}-${first.sector.toLowerCase()}`,
+    name: first.originalBrand,
+    originalBrand: first.originalBrand,
+    sector: first.sector,
+    category: first.category,
+    image: first.image,
+    description: first.description.replace(/\s+-\s+\d+\s+-?\s*/, " - ").trim(),
+    deliveryTime: first.deliveryTime,
+    packages,
+  };
+});
+
+export const getCatalogBrand = (brandId: string | undefined) =>
+  catalogBrands.find((brand) => brand.id === brandId);
+
+export const getCatalogBrandForService = (serviceId: string) => {
+  const service = services.find((item) => item.id === serviceId);
+  return service ? catalogBrands.find((brand) => brand.originalBrand === service.originalBrand && brand.sector === service.sector) : undefined;
+};
 
 const countForCategory = (category: CatalogCategory["id"]) => category === "all" ? services.length : services.filter((item) => item.category === category).length;
 
