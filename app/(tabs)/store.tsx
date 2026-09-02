@@ -39,6 +39,10 @@ export default function StoreScreen() {
     <ScreenContainer className="px-4 pt-3">
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
         <View className="gap-4">
+          <View className="rounded-2xl bg-[#1A1A1D] px-4 py-3">
+            <Text className="text-center text-xs font-bold leading-5 text-[#D4AF37]">كتالوج تجريبي للعرض — الأسعار والتنفيذ يدويان عبر واتساب 01279332563</Text>
+          </View>
+
           <View className="gap-1">
             <Text className="text-3xl font-black text-foreground">متجر LIONX</Text>
             <Text className="text-sm leading-6 text-muted">اختار البراند مرة واحدة، وبعدها اختار الباقة من صفحة الخدمة. التصفح منظم عشان تلاقي طلبك بسرعة.</Text>

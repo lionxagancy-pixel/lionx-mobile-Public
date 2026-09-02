@@ -46,8 +46,7 @@ export function CatalogBrandCard({ brand }: { brand: CatalogBrand }) {
         </View>
         <Text style={styles.name} numberOfLines={2}>{brand.name}</Text>
         <View style={styles.metaRow}>
-          <Text style={styles.packageCount}>{brand.packages.length} اختيارًا</Text>
-          <Text style={styles.eta} numberOfLines={1}>المعالجة: يدوية</Text>
+          <Text style={styles.packageCount}>{brand.packages.length} باقة • يدوي - فوري</Text>
         </View>
         <View style={styles.cta}>
           <Text style={styles.ctaText}>استعرض الباقات ←</Text>
