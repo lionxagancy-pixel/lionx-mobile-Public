@@ -10,7 +10,18 @@ export interface PaymentMethodCardProps {
 }
 
 const styles = StyleSheet.create({
-  logo: { width: 48, height: 48 },
+  logo: { width: 56, height: 56 },
+  logoBox: {
+    width: 72,
+    height: 72,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 18,
+    borderWidth: 1,
+    borderColor: "#D4AF37",
+    backgroundColor: "#FFFFFF",
+    padding: 6,
+  },
 });
 
 export function PaymentMethodCard({
@@ -24,7 +35,7 @@ export function PaymentMethodCard({
   return (
     <View className="rounded-3xl border border-border bg-surface p-4">
       <View className="flex-row items-center gap-3">
-        <View className="h-16 w-16 items-center justify-center rounded-2xl border border-border bg-background p-2">
+        <View style={styles.logoBox}>
           <Image source={logo} resizeMode="contain" style={styles.logo} />
         </View>
         <View className="flex-1">

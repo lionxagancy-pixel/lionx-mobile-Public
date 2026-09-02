@@ -1,7 +1,17 @@
 import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
 
 const styles = StyleSheet.create({
-  icon: { width: 28, height: 28 },
+  icon: { width: 32, height: 32 },
+  socialButton: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    borderWidth: 1,
+    borderColor: "#D4AF37",
+    backgroundColor: "#FFFFFF",
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
 
 const socialLinks = [
@@ -35,17 +45,7 @@ export function SocialFooter() {
             accessibilityLabel={social.name}
             onPress={() => void openSocial(social.url)}
             style={({ pressed }) => [
-              {
-                opacity: pressed ? 0.55 : 1,
-                alignItems: "center",
-                justifyContent: "center",
-                width: 46,
-                height: 46,
-                borderRadius: 16,
-                borderWidth: 1,
-                borderColor: "#3B3325",
-                backgroundColor: "#17130F",
-              },
+              [styles.socialButton, { opacity: pressed ? 0.55 : 1 }],
             ]}
           >
             <Image source={social.image} resizeMode="contain" style={styles.icon} />

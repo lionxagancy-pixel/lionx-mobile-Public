@@ -80,9 +80,11 @@ const styles = StyleSheet.create({
     elevation: 7,
   },
   card: {
+    width: "100%",
     aspectRatio: 1,
     minHeight: 0,
-    borderRadius: 16,
+    overflow: "hidden",
+    borderRadius: 20,
     borderWidth: 1,
     borderColor: "#D4AF37",
     backgroundColor: "#FFFFFF",
@@ -117,6 +119,6 @@ const styles = StyleSheet.create({
   metaRow: { marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 4 },
   packageCount: { color: "#B18B18", fontSize: 10, fontWeight: "900" },
   eta: { flex: 1, color: "#777777", fontSize: 9, textAlign: "right" },
-  cta: { marginTop: "auto", borderTopWidth: 1, borderTopColor: "#EFE4B5", paddingTop: 7 },
+  cta: { marginTop: 6, borderTopWidth: 1, borderTopColor: "#EFE4B5", paddingTop: 7 },
   ctaText: { color: "#111111", fontSize: 10, fontWeight: "900", textAlign: "right" },
 });
