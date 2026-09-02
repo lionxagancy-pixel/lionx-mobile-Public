@@ -1,5 +1,5 @@
 import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
-import { useRouter } from "expo-router";
+import { Link } from "expo-router";
 
 const styles = StyleSheet.create({
   icon: { width: 32, height: 32 },
@@ -39,7 +39,6 @@ const socialLinks = [
 ];
 
 export function SocialFooter() {
-  const router = useRouter();
   const openSocial = async (url: string) => {
     try {
       await Linking.openURL(url);
@@ -70,19 +69,23 @@ export function SocialFooter() {
         <Text className="text-center text-[10px] font-black tracking-widest text-primary">استكشف أقسام LIONX</Text>
         <View className="flex-row flex-wrap justify-center gap-2">
           {sectionLinks.map((link) => (
-            <Pressable key={link.path} onPress={() => router.push(link.path)} accessibilityRole="link" style={({ pressed }) => [{ opacity: pressed ? 0.62 : 1 }]}>
-              <View className="rounded-full border border-border bg-surface px-3 py-2">
-                <Text className="text-[10px] font-black text-foreground">{link.label}</Text>
-              </View>
-            </Pressable>
+            <Link key={link.path} href={link.path} asChild>
+              <Pressable accessibilityRole="link" style={({ pressed }) => [{ opacity: pressed ? 0.62 : 1 }]}>
+                <View className="rounded-full border border-border bg-surface px-3 py-2">
+                  <Text className="text-[10px] font-black text-foreground">{link.label}</Text>
+                </View>
+              </Pressable>
+            </Link>
           ))}
         </View>
       </View>
       <View className="mt-4 flex-row flex-wrap justify-center gap-4">
         {footerLinks.map((link) => (
-          <Pressable key={link.path} onPress={() => router.push(link.path)} accessibilityRole="link">
-            <Text className="text-[11px] font-bold text-primary">{link.label}</Text>
-          </Pressable>
+          <Link key={link.path} href={link.path} asChild>
+            <Pressable accessibilityRole="link">
+              <Text className="text-[11px] font-bold text-primary">{link.label}</Text>
+            </Pressable>
+          </Link>
         ))}
       </View>
       <Text className="mt-4 text-center text-[11px] text-muted">الدعم عبر واتساب: 01279332563</Text>
