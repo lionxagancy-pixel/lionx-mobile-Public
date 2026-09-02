@@ -5,6 +5,7 @@ import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { CatalogBrandCard } from "@/components/catalog-brand-card";
 import { catalogBrands, categories, mallPillars, services } from "@/shared/catalog";
+import { CARD_THEME } from "@/shared/brand-theme";
 
 const categoryByPillar: Record<string, string> = {
   play: "gaming",
@@ -172,9 +173,9 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.84, transform: [{ scale: 0.99 }] },
   grid: { flexDirection: "row" as const, flexWrap: "wrap" as const, gap: 16 },
   gridCell: { width: Platform.OS === "web" ? "23.2%" : "48%", minWidth: 0 } as any,
-  brandStrip: { marginTop: 4, borderTopWidth: 1, borderTopColor: "#D4AF37", paddingTop: 16 },
-  brandHeading: { color: "#111111", fontSize: 15, fontWeight: "900", textAlign: "right" as const },
+  brandStrip: { marginTop: 4, borderTopWidth: 1, borderTopColor: CARD_THEME.cardBorder, paddingTop: 16 },
+  brandHeading: { color: CARD_THEME.cardText, fontSize: 15, fontWeight: "900", textAlign: "right" as const },
   brandWrap: { marginTop: 10, flexDirection: "row" as const, flexWrap: "wrap" as const, gap: 8 },
-  brandChip: { borderRadius: 999, borderWidth: 1, borderColor: "#D4AF37", backgroundColor: "#FFFFFF", paddingHorizontal: 12, paddingVertical: 8 },
-  brandText: { color: "#111111", fontSize: 11, fontWeight: "800" },
+  brandChip: { borderRadius: 999, borderWidth: 1, borderColor: CARD_THEME.cardBorder, backgroundColor: CARD_THEME.cardBackground, paddingHorizontal: 12, paddingVertical: 8 },
+  brandText: { color: CARD_THEME.cardText, fontSize: 11, fontWeight: "800" },
 });
