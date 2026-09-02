@@ -55,11 +55,12 @@ export default function StoreScreen() {
             />
           </View>
 
+          <Text className="text-xs font-black tracking-widest text-primary">فلتر القطاعات</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8 }}>
             {categories.map((item) => (
               <Pressable key={item.id} onPress={() => selectCategory(item.id)}>
                 <View className={`rounded-full border px-4 py-2.5 ${category === item.id ? "border-primary bg-primary" : "border-border bg-surface"}`}>
-                  <Text className={`text-xs font-bold ${category === item.id ? "text-background" : "text-foreground"}`}>{item.label} · {item.count}</Text>
+                  <Text className={`text-xs font-bold ${category === item.id ? "text-background" : "text-foreground"}`}>{item.label} · {item.count} باقة</Text>
                 </View>
               </Pressable>
             ))}
@@ -73,7 +74,7 @@ export default function StoreScreen() {
                     <Text className="text-xl font-black text-foreground">اختار عالمك</Text>
                     <Text className="mt-1 text-xs text-muted">خمس ركائز واضحة بدل قائمة طويلة</Text>
                   </View>
-                  <Text className="text-xs font-bold text-primary">{services.length.toLocaleString("ar-EG")} خدمة · {catalogBrands.length} براند</Text>
+                  <Text className="text-xs font-bold text-primary">{services.length.toLocaleString("ar-EG")} باقة داخل {catalogBrands.length} براند</Text>
                 </View>
                 <View style={styles.pillarGrid}>
                   {mallPillars.map((pillar) => (

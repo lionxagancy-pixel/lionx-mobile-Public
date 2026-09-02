@@ -48,9 +48,14 @@ export default function HomeScreen() {
               <Text className="text-xs font-bold tracking-widest text-primary">LIONX AI POWERED V17</Text>
               <Text className="mt-2 text-3xl font-black leading-9 text-foreground">كل خدمة رقمية،{"\n"}بلمسة واحدة.</Text>
               <Text className="mt-2 text-sm leading-5 text-muted">شحن فوري، ضمان ذهبي، وتجربة مصممة لك.</Text>
-              <View className="mt-5 flex-row gap-2">
-                {[`${services.length.toLocaleString("en-US")} خدمة`, "15 قسمًا", "تأكيد يدوي"].map((stat) => <View key={stat} className="rounded-xl bg-background px-2.5 py-2"><Text className="text-[10px] font-bold text-primary">{stat}</Text></View>)}
+              <View className="mt-5 flex-row flex-wrap gap-2">
+                {[`${services.length.toLocaleString("en-US")} باقة`, `${catalogBrands.length} براند`, "5 قطاعات", "تأكيد يدوي"].map((stat) => <View key={stat} className="rounded-xl bg-background px-2.5 py-2"><Text className="text-[10px] font-bold text-primary">{stat}</Text></View>)}
               </View>
+              <Pressable onPress={() => router.push("/store")} style={({ pressed }) => [{ opacity: pressed ? 0.75 : 1 }]}>
+                <View className="mt-4 rounded-2xl bg-primary px-4 py-3">
+                  <Text className="text-center text-sm font-black text-background">ادخل المتجر الآن ←</Text>
+                </View>
+              </Pressable>
             </View>
             <View className="flex-row items-center rounded-2xl border border-border bg-surface px-4">
               <IconSymbol name="search" size={21} color="#A9A39A" />
@@ -95,7 +100,7 @@ export default function HomeScreen() {
                       <Text className="text-xs font-black tracking-widest text-primary">{pillar.label}</Text>
                       <Text className="mt-1 text-sm font-bold text-foreground">{pillar.arabicLabel}</Text>
                       <Text className="mt-1 text-[10px] leading-4 text-muted" numberOfLines={2}>{pillar.description}</Text>
-                      <Text className="mt-2 text-[10px] font-bold text-primary">{pillar.count.toLocaleString("en-US")} خدمة</Text>
+                      <Text className="mt-2 text-[10px] font-bold text-primary">{pillar.count.toLocaleString("en-US")} باقة</Text>
                     </View>
                   </Pressable>
                 ))}

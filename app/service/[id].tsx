@@ -42,7 +42,7 @@ export default function ServiceDetailsScreen() {
           <View className="border-t border-[#EFE4B5] bg-[#FFFDF6] p-4">
             <View className="flex-row items-center justify-between gap-3">
               <Text className="rounded-lg bg-primary px-2.5 py-1 text-[10px] font-black text-background">{brand.sector}</Text>
-              <Text className="flex-1 text-right text-xs font-bold text-muted">{brand.packages.length} باقة متاحة</Text>
+              <Text className="flex-1 text-right text-xs font-bold text-muted">{brand.packages.length} اختيارًا متاحًا</Text>
             </View>
             <Text className="mt-2 text-2xl font-black text-foreground">{brand.name}</Text>
             <Text className="mt-1 text-sm leading-6 text-muted">{brand.description}</Text>
@@ -70,7 +70,7 @@ export default function ServiceDetailsScreen() {
                   </View>
                   <View className="flex-1 px-3">
                     <Text className="text-right text-sm font-black text-foreground">{item.name}</Text>
-                    <Text className="mt-1 text-right text-xs text-muted">{item.deliveryTime} · تنفيذ يدوي</Text>
+                    <Text className="mt-1 text-right text-xs text-muted">المعالجة: يدوية · التسليم حسب توفر الخدمة</Text>
                   </View>
                   <Text className="text-sm font-black text-primary">{formatEgp(item.price)}</Text>
                 </View>
@@ -86,7 +86,7 @@ export default function ServiceDetailsScreen() {
           </View>
           <View className="flex-1 rounded-2xl border border-border bg-surface p-4">
             <Text className="text-xs text-muted">التسليم</Text>
-            <Text className="mt-2 text-sm font-black text-success">{selectedPackage.eta}</Text>
+            <Text className="mt-2 text-sm font-black text-success">حسب توفر الخدمة</Text>
           </View>
         </View>
 

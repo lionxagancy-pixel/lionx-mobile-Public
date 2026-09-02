@@ -1,4 +1,5 @@
 import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
 
 const styles = StyleSheet.create({
   icon: { width: 32, height: 32 },
@@ -14,6 +15,12 @@ const styles = StyleSheet.create({
   },
 });
 
+const footerLinks = [
+  { label: "الخصوصية", path: "/privacy" },
+  { label: "الشروط", path: "/terms" },
+  { label: "المدونة", path: "/blog" },
+  { label: "الكورسات", path: "/courses" },
+] as const;
 const socialLinks = [
   { name: "فيسبوك", image: require("@/assets/images/social/facebook.png"), url: "https://www.facebook.com/" },
   { name: "إنستجرام", image: require("@/assets/images/social/instagram.png"), url: "https://www.instagram.com/" },
@@ -25,6 +32,7 @@ const socialLinks = [
 ];
 
 export function SocialFooter() {
+  const router = useRouter();
   const openSocial = async (url: string) => {
     try {
       await Linking.openURL(url);
@@ -52,7 +60,14 @@ export function SocialFooter() {
           </Pressable>
         ))}
       </View>
-      <Text className="mt-5 text-center text-[11px] text-muted">الدعم عبر واتساب: 01279332563</Text>
+      <View className="mt-5 flex-row flex-wrap justify-center gap-4">
+        {footerLinks.map((link) => (
+          <Pressable key={link.path} onPress={() => router.push(link.path)} accessibilityRole="link">
+            <Text className="text-[11px] font-bold text-primary">{link.label}</Text>
+          </Pressable>
+        ))}
+      </View>
+      <Text className="mt-4 text-center text-[11px] text-muted">الدعم عبر واتساب: 01279332563</Text>
     </View>
   );
 }
