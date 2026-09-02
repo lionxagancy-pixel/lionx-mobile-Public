@@ -4,7 +4,6 @@ import { useRouter } from "expo-router";
 import type { CSSProperties } from "react";
 import type { CatalogBrand } from "@/shared/catalog";
 import { getCatalogImageSource, getCatalogImageWebPath } from "@/shared/catalog-images";
-import { CARD_THEME } from "@/shared/brand-theme";
 
 const sectorLabel: Record<string, string> = {
   PLAY: "PLAY",
@@ -74,24 +73,21 @@ const styles = StyleSheet.create({
   pressed: { opacity: 0.86, transform: [{ scale: 0.98 }] },
   hovered: {
     transform: [{ scale: 1.02 }],
-    shadowColor: CARD_THEME.cardBorder,
+    shadowColor: "#D4AF37",
     shadowOpacity: 0.26,
     shadowRadius: 16,
     shadowOffset: { width: 0, height: 8 },
     elevation: 7,
   },
   card: {
-    width: "100%",
     aspectRatio: 1,
     minHeight: 0,
-    overflow: "hidden",
-    borderRadius: CARD_THEME.cardRadius,
-    borderWidth: CARD_THEME.cardBorderWidth,
-    borderColor: CARD_THEME.cardBorder,
-    backgroundColor: CARD_THEME.cardBackground,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: "#D4AF37",
+    backgroundColor: "#FFFFFF",
     padding: 10,
-    justifyContent: "space-between",
-    shadowColor: CARD_THEME.cardShadow,
+    shadowColor: "#111111",
     shadowOpacity: 0.12,
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 5 },
@@ -100,7 +96,7 @@ const styles = StyleSheet.create({
   imageWrap: {
     height: 76,
     borderRadius: 12,
-    backgroundColor: CARD_THEME.cardBackground,
+    backgroundColor: "#FFFFFF",
     alignItems: "center",
     justifyContent: "center",
     padding: 8,
@@ -112,15 +108,15 @@ const styles = StyleSheet.create({
     top: 5,
     right: 5,
     borderRadius: 7,
-    backgroundColor: CARD_THEME.accent,
+    backgroundColor: "#D4AF37",
     paddingHorizontal: 6,
     paddingVertical: 3,
   },
   badgeText: { color: "#0A0A0A", fontSize: 9, fontWeight: "900", letterSpacing: 0.6 },
-  name: { marginTop: 8, color: CARD_THEME.cardText, fontSize: 13, fontWeight: "900", lineHeight: 17, textAlign: "right" },
+  name: { marginTop: 8, color: "#111111", fontSize: 13, fontWeight: "900", lineHeight: 17, textAlign: "right" },
   metaRow: { marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 4 },
-  packageCount: { color: CARD_THEME.accent, fontSize: 10, fontWeight: "900" },
-  eta: { flex: 1, color: CARD_THEME.cardMuted, fontSize: 9, textAlign: "right" },
-  cta: { marginTop: 6, borderTopWidth: 1, borderTopColor: CARD_THEME.cardDivider, paddingTop: 7 },
-  ctaText: { color: CARD_THEME.cardText, fontSize: 10, fontWeight: "900", textAlign: "right" },
+  packageCount: { color: "#B18B18", fontSize: 10, fontWeight: "900" },
+  eta: { flex: 1, color: "#777777", fontSize: 9, textAlign: "right" },
+  cta: { marginTop: "auto", borderTopWidth: 1, borderTopColor: "#EFE4B5", paddingTop: 7 },
+  ctaText: { color: "#111111", fontSize: 10, fontWeight: "900", textAlign: "right" },
 });
