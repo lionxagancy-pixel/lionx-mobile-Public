@@ -21,6 +21,13 @@ const footerLinks = [
   { label: "المدونة", path: "/blog" },
   { label: "الكورسات", path: "/courses" },
 ] as const;
+const sectionLinks = [
+  { label: "PLAY · الألعاب", path: "/sector/play" },
+  { label: "PAY · الدفع", path: "/sector/pay" },
+  { label: "GROW · النمو", path: "/sector/grow" },
+  { label: "DIGITAL · الاشتراكات", path: "/sector/digital" },
+  { label: "VIP · الخاصة", path: "/sector/vip" },
+] as const;
 const socialLinks = [
   { name: "فيسبوك", image: require("@/assets/images/social/facebook.png"), url: "https://www.facebook.com/" },
   { name: "إنستجرام", image: require("@/assets/images/social/instagram.png"), url: "https://www.instagram.com/" },
@@ -52,15 +59,26 @@ export function SocialFooter() {
             accessibilityRole="link"
             accessibilityLabel={social.name}
             onPress={() => void openSocial(social.url)}
-            style={({ pressed }) => [
-              [styles.socialButton, { opacity: pressed ? 0.55 : 1 }],
-            ]}
+                        style={({ pressed }) => [styles.socialButton, { opacity: pressed ? 0.55 : 1 }]}
+
           >
             <Image source={social.image} resizeMode="contain" style={styles.icon} />
           </Pressable>
         ))}
       </View>
-      <View className="mt-5 flex-row flex-wrap justify-center gap-4">
+      <View className="mt-5 w-full gap-2">
+        <Text className="text-center text-[10px] font-black tracking-widest text-primary">استكشف أقسام LIONX</Text>
+        <View className="flex-row flex-wrap justify-center gap-2">
+          {sectionLinks.map((link) => (
+            <Pressable key={link.path} onPress={() => router.push(link.path)} accessibilityRole="link" style={({ pressed }) => [{ opacity: pressed ? 0.62 : 1 }]}>
+              <View className="rounded-full border border-border bg-surface px-3 py-2">
+                <Text className="text-[10px] font-black text-foreground">{link.label}</Text>
+              </View>
+            </Pressable>
+          ))}
+        </View>
+      </View>
+      <View className="mt-4 flex-row flex-wrap justify-center gap-4">
         {footerLinks.map((link) => (
           <Pressable key={link.path} onPress={() => router.push(link.path)} accessibilityRole="link">
             <Text className="text-[11px] font-bold text-primary">{link.label}</Text>
