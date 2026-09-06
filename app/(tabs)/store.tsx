@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { CatalogBrandCard } from "@/components/catalog-brand-card";
+import { SocialFooter } from "@/components/social-footer";
 import { catalogBrands, categories, mallPillars, services } from "@/shared/catalog";
 
 const categoryByPillar: Record<string, string> = {
@@ -158,6 +159,7 @@ export default function StoreScreen() {
               )}
             </View>
           )}
+          <SocialFooter />
         </View>
       </ScrollView>
     </ScreenContainer>
