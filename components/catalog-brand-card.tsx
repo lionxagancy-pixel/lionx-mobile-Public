@@ -25,16 +25,11 @@ export function CatalogBrandCard({ brand }: { brand: CatalogBrand }) {
       onPress={() => router.push({ pathname: "/service/[id]", params: { id: brand.id } })}
       onHoverIn={() => setHovered(true)}
       onHoverOut={() => setHovered(false)}
-      style={({ pressed }) => [
-        styles.pressable,
-        pressed && styles.pressed,
-        hovered && styles.hovered,
-      ]}
+      style={({ pressed }) => [styles.pressable, pressed && styles.pressed, hovered && styles.hovered]}
       accessibilityRole="button"
-      accessibilityLabel={`فتح باقات ${brand.name}`}
+      accessibilityLabel={`استكشف باقات ${brand.name}`}
     >
-              <View style={styles.card}>
-
+      <View style={styles.card}>
         <View style={styles.imageWrap}>
           {Platform.OS === "web" ? (
             <img src={webImagePath} alt={brand.name} style={webImageStyle} />
@@ -46,11 +41,9 @@ export function CatalogBrandCard({ brand }: { brand: CatalogBrand }) {
           </View>
         </View>
         <Text style={styles.name} numberOfLines={2}>{brand.name}</Text>
-        <View style={styles.metaRow}>
-          <Text style={styles.packageCount}>{brand.packages.length} باقة • يدوي - فوري</Text>
-        </View>
+        <Text style={styles.discovery}>اكتشف الاختيارات المتاحة</Text>
         <View style={styles.cta}>
-          <Text style={styles.ctaText}>استعرض الباقات ←</Text>
+          <Text style={styles.ctaText}>استكشف الباقات ←</Text>
         </View>
       </View>
     </Pressable>
@@ -74,28 +67,28 @@ const styles = StyleSheet.create({
   hovered: {
     transform: [{ scale: 1.02 }],
     shadowColor: "#D4AF37",
-    shadowOpacity: 0.26,
+    shadowOpacity: 0.3,
     shadowRadius: 16,
     shadowOffset: { width: 0, height: 8 },
     elevation: 7,
   },
   card: {
     width: "100%",
-    minHeight: 184,
+    minHeight: 190,
     overflow: "hidden",
-    borderRadius: 20,
+    borderRadius: 18,
     borderWidth: 1,
-    borderColor: "rgba(212,175,55,0.42)",
+    borderColor: "rgba(212,175,55,0.36)",
     backgroundColor: "#151515",
-    padding: 10,
+    padding: 9,
     shadowColor: "#000000",
-    shadowOpacity: 0.28,
+    shadowOpacity: 0.3,
     shadowRadius: 14,
     shadowOffset: { width: 0, height: 7 },
     elevation: 5,
   },
   imageWrap: {
-    height: 66,
+    height: 70,
     borderRadius: 12,
     backgroundColor: "#F7F7F4",
     alignItems: "center",
@@ -115,9 +108,7 @@ const styles = StyleSheet.create({
   },
   badgeText: { color: "#0A0A0A", fontSize: 9, fontWeight: "900", letterSpacing: 0.6 },
   name: { marginTop: 8, color: "#FFFFFF", fontSize: 13, fontWeight: "900", lineHeight: 17, textAlign: "right" },
-  metaRow: { marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 4 },
-  packageCount: { color: "#E6C65C", fontSize: 10, fontWeight: "900" },
-  eta: { flex: 1, color: "#B8B8B8", fontSize: 9, textAlign: "right" },
-  cta: { marginTop: 6, borderTopWidth: 1, borderTopColor: "rgba(212,175,55,0.28)", paddingTop: 7 },
+  discovery: { marginTop: 4, color: "#B9B4A2", fontSize: 10, fontWeight: "700", textAlign: "right" },
+  cta: { marginTop: 8, borderTopWidth: 1, borderTopColor: "rgba(212,175,55,0.28)", paddingTop: 7 },
   ctaText: { color: "#E6C65C", fontSize: 10, fontWeight: "900", textAlign: "right", textDecorationLine: "underline" },
 });
