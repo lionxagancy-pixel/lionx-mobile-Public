@@ -1,7 +1,7 @@
 import { Tabs } from "expo-router";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Platform, StyleSheet } from "react-native";
+import { Platform, StyleSheet, Text } from "react-native";
 import { HapticTab } from "@/components/haptic-tab";
 import { useColors } from "@/hooks/use-colors";
 
@@ -12,12 +12,24 @@ type NavIconName =
   | "package-variant-closed"
   | "account-outline";
 
+const webFallbackIcon: Record<NavIconName, string> = {
+  "home-outline": "⌂",
+  "storefront-outline": "▣",
+  "wallet-outline": "◈",
+  "package-variant-closed": "▤",
+  "account-outline": "◉",
+};
+
 function BottomNavIcon({ name, color }: { name: NavIconName; color: string }) {
+  if (Platform.OS === "web") {
+    return <Text style={[styles.webIcon, { color }]}>{webFallbackIcon[name]}</Text>;
+  }
   return <MaterialCommunityIcons name={name} size={23} color={color} style={styles.icon} />;
 }
 
 const styles = StyleSheet.create({
   icon: { marginTop: 1 },
+  webIcon: { fontSize: 22, lineHeight: 24, fontWeight: "900", marginTop: 0 },
 });
 
 export default function TabLayout() {

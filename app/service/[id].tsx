@@ -31,21 +31,21 @@ export default function ServiceDetailsScreen() {
           <Text className="text-sm font-bold text-primary">← العودة للمتجر</Text>
         </Pressable>
 
-        <View className="mt-5 overflow-hidden rounded-3xl border border-primary bg-white">
-          <View className="h-44 items-center justify-center bg-white p-6">
+        <View className="mt-5 overflow-hidden rounded-3xl border border-[#D4AF37]/40 bg-[#151515]">
+          <View className="h-32 items-center justify-center bg-[#F7F7F4] p-5">
             {Platform.OS === "web" ? (
               <img src={webImagePath} alt={brand.name} style={webImageStyle} />
             ) : (
               <Image source={imageSource} resizeMode="contain" style={{ width: "100%", height: "100%" }} />
             )}
           </View>
-          <View className="border-t border-[#EFE4B5] bg-[#FFFDF6] p-4">
+          <View className="border-t border-[#D4AF37]/25 bg-[#1A1A1D] p-4">
             <View className="flex-row items-center justify-between gap-3">
-              <Text className="rounded-lg bg-primary px-2.5 py-1 text-[10px] font-black text-background">{brand.sector}</Text>
-              <Text className="flex-1 text-right text-xs font-bold text-muted">{brand.packages.length} اختيارًا متاحًا</Text>
+              <Text className="rounded-lg bg-[#D4AF37] px-2.5 py-1 text-[10px] font-black text-[#151515]">{brand.sector}</Text>
+              <Text className="flex-1 text-right text-xs font-bold text-[#B8B8B8]">{brand.packages.length} اختيارًا متاحًا</Text>
             </View>
-            <Text className="mt-2 text-2xl font-black text-foreground">{brand.name}</Text>
-            <Text className="mt-1 text-sm leading-6 text-muted">{brand.description}</Text>
+            <Text className="mt-2 text-2xl font-black text-white">{brand.name}</Text>
+            <Text className="mt-1 text-sm leading-6 text-[#B8B8B8]">{brand.description}</Text>
           </View>
         </View>
 
@@ -64,15 +64,15 @@ export default function ServiceDetailsScreen() {
             const selected = item.id === selectedPackage.id;
             return (
               <Pressable key={item.id} onPress={() => setSelectedId(item.id)} style={({ pressed }) => [{ opacity: pressed ? 0.82 : 1 }]}>
-                <View className={`flex-row items-center justify-between rounded-2xl border p-4 ${selected ? "border-primary bg-[#FFF9E8]" : "border-border bg-surface"}`}>
-                  <View className={`h-5 w-5 items-center justify-center rounded-full border ${selected ? "border-primary bg-primary" : "border-border bg-background"}`}>
+                <View className={`flex-row items-center justify-between rounded-2xl border p-4 ${selected ? "border-[#D4AF37] bg-[#211F16]" : "border-[#D4AF37]/25 bg-[#151515]"}`}>
+                  <View className={`h-5 w-5 items-center justify-center rounded-full border ${selected ? "border-[#D4AF37] bg-[#D4AF37]" : "border-[#6A6039] bg-[#0D0D0D]"}`}>
                     {selected ? <View className="h-2 w-2 rounded-full bg-background" /> : null}
                   </View>
                   <View className="flex-1 px-3">
-                    <Text className="text-right text-sm font-black text-foreground">{item.name}</Text>
-                    <Text className="mt-1 text-right text-xs text-muted">المعالجة: يدوية · التسليم حسب توفر الخدمة</Text>
+                    <Text className="text-right text-sm font-black text-white">{item.name}</Text>
+                    <Text className="mt-1 text-right text-xs text-[#B8B8B8]">المعالجة: يدوية · التسليم حسب توفر الخدمة</Text>
                   </View>
-                  <Text className="text-sm font-black text-primary">{formatEgp(item.price)}</Text>
+                  <Text className="text-sm font-black text-[#E6C65C]">{formatEgp(item.price)}</Text>
                 </View>
               </Pressable>
             );
@@ -80,19 +80,19 @@ export default function ServiceDetailsScreen() {
         </View>
 
         <View className="mt-5 flex-row gap-3">
-          <View className="flex-1 rounded-2xl border border-border bg-surface p-4">
-            <Text className="text-xs text-muted">الباقة المختارة</Text>
-            <Text className="mt-2 text-sm font-black text-foreground" numberOfLines={2}>{selectedPackage.name}</Text>
+          <View className="flex-1 rounded-2xl border border-[#D4AF37]/25 bg-[#151515] p-4">
+            <Text className="text-xs text-[#B8B8B8]">الباقة المختارة</Text>
+            <Text className="mt-2 text-sm font-black text-white" numberOfLines={2}>{selectedPackage.name}</Text>
           </View>
-          <View className="flex-1 rounded-2xl border border-border bg-surface p-4">
-            <Text className="text-xs text-muted">التسليم</Text>
-            <Text className="mt-2 text-sm font-black text-success">حسب توفر الخدمة</Text>
+          <View className="flex-1 rounded-2xl border border-[#D4AF37]/25 bg-[#151515] p-4">
+            <Text className="text-xs text-[#B8B8B8]">التسليم</Text>
+            <Text className="mt-2 text-sm font-black text-[#E6C65C]">حسب توفر الخدمة</Text>
           </View>
         </View>
 
         <Pressable onPress={() => { addToCart(selectedPackage); router.push("/checkout"); }} style={({ pressed }) => [{ opacity: pressed ? 0.85 : 1 }]}>
           <View className="mt-6 items-center rounded-2xl bg-primary py-4">
-            <Text className="font-black text-background">أضف الباقة للسلة · {formatEgp(selectedPackage.price)}</Text>
+            <Text className="font-black text-[#151515]">أضف الباقة للسلة · {formatEgp(selectedPackage.price)}</Text>
           </View>
         </Pressable>
       </ScrollView>

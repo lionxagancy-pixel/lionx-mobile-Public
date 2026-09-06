@@ -1,4 +1,4 @@
-import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Linking, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 
 const styles = StyleSheet.create({
@@ -29,13 +29,13 @@ const sectionLinks = [
   { label: "VIP · الخاصة", path: "/sector/vip" },
 ] as const;
 const socialLinks = [
-  { name: "فيسبوك", image: require("@/assets/images/social/facebook.png"), url: "https://www.facebook.com/" },
-  { name: "إنستجرام", image: require("@/assets/images/social/instagram.png"), url: "https://www.instagram.com/" },
-  { name: "تيك توك", image: require("@/assets/images/social/tiktok.png"), url: "https://www.tiktok.com/" },
-  { name: "Threads", image: require("@/assets/images/social/threads.png"), url: "https://www.threads.net/" },
-  { name: "تليجرام", image: require("@/assets/images/social/telegram.png"), url: "https://t.me/" },
-  { name: "لينكدان", image: require("@/assets/images/social/linkedin.png"), url: "https://www.linkedin.com/" },
-  { name: "واتساب", image: require("@/assets/images/social/whatsapp.png"), url: "https://wa.me/201279332563" },
+  { name: "فيسبوك", file: "facebook.png", image: require("@/assets/images/social/facebook.png"), url: "https://www.facebook.com/" },
+  { name: "إنستجرام", file: "instagram.png", image: require("@/assets/images/social/instagram.png"), url: "https://www.instagram.com/" },
+  { name: "تيك توك", file: "tiktok.png", image: require("@/assets/images/social/tiktok.png"), url: "https://www.tiktok.com/" },
+  { name: "Threads", file: "threads.png", image: require("@/assets/images/social/threads.png"), url: "https://www.threads.net/" },
+  { name: "تليجرام", file: "telegram.png", image: require("@/assets/images/social/telegram.png"), url: "https://t.me/" },
+  { name: "لينكدان", file: "linkedin.png", image: require("@/assets/images/social/linkedin.png"), url: "https://www.linkedin.com/" },
+  { name: "واتساب", file: "whatsapp.png", image: require("@/assets/images/social/whatsapp.png"), url: "https://wa.me/201279332563" },
 ];
 
 export function SocialFooter() {
@@ -61,7 +61,11 @@ export function SocialFooter() {
                         style={({ pressed }) => [styles.socialButton, { opacity: pressed ? 0.55 : 1 }]}
 
           >
-            <Image source={social.image} resizeMode="contain" style={styles.icon} />
+            {Platform.OS === "web" ? (
+              <img src={`/lionx-mobile-Public/assets/images/social/${social.file}`} alt={social.name} style={{ width: 32, height: 32, objectFit: "contain" }} />
+            ) : (
+              <Image source={social.image} resizeMode="contain" style={styles.icon} />
+            )}
           </Pressable>
         ))}
       </View>

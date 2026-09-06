@@ -33,7 +33,8 @@ export function CatalogBrandCard({ brand }: { brand: CatalogBrand }) {
       accessibilityRole="button"
       accessibilityLabel={`فتح باقات ${brand.name}`}
     >
-      <View style={styles.card}>
+              <View style={styles.card}>
+
         <View style={styles.imageWrap}>
           {Platform.OS === "web" ? (
             <img src={webImagePath} alt={brand.name} style={webImageStyle} />
@@ -80,24 +81,23 @@ const styles = StyleSheet.create({
   },
   card: {
     width: "100%",
-    aspectRatio: 1,
-    minHeight: 0,
+    minHeight: 184,
     overflow: "hidden",
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: "#D4AF37",
-    backgroundColor: "#FFFFFF",
+    borderColor: "rgba(212,175,55,0.42)",
+    backgroundColor: "#151515",
     padding: 10,
-    shadowColor: "#111111",
-    shadowOpacity: 0.12,
-    shadowRadius: 12,
-    shadowOffset: { width: 0, height: 5 },
-    elevation: 4,
+    shadowColor: "#000000",
+    shadowOpacity: 0.28,
+    shadowRadius: 14,
+    shadowOffset: { width: 0, height: 7 },
+    elevation: 5,
   },
   imageWrap: {
-    height: 76,
+    height: 66,
     borderRadius: 12,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#F7F7F4",
     alignItems: "center",
     justifyContent: "center",
     padding: 8,
@@ -114,10 +114,10 @@ const styles = StyleSheet.create({
     paddingVertical: 3,
   },
   badgeText: { color: "#0A0A0A", fontSize: 9, fontWeight: "900", letterSpacing: 0.6 },
-  name: { marginTop: 8, color: "#111111", fontSize: 13, fontWeight: "900", lineHeight: 17, textAlign: "right" },
+  name: { marginTop: 8, color: "#FFFFFF", fontSize: 13, fontWeight: "900", lineHeight: 17, textAlign: "right" },
   metaRow: { marginTop: 5, flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: 4 },
-  packageCount: { color: "#B18B18", fontSize: 10, fontWeight: "900" },
-  eta: { flex: 1, color: "#777777", fontSize: 9, textAlign: "right" },
-  cta: { marginTop: 6, borderTopWidth: 1, borderTopColor: "#EFE4B5", paddingTop: 7 },
-  ctaText: { color: "#111111", fontSize: 10, fontWeight: "900", textAlign: "right" },
+  packageCount: { color: "#E6C65C", fontSize: 10, fontWeight: "900" },
+  eta: { flex: 1, color: "#B8B8B8", fontSize: 9, textAlign: "right" },
+  cta: { marginTop: 6, borderTopWidth: 1, borderTopColor: "rgba(212,175,55,0.28)", paddingTop: 7 },
+  ctaText: { color: "#E6C65C", fontSize: 10, fontWeight: "900", textAlign: "right", textDecorationLine: "underline" },
 });
