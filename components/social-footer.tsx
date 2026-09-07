@@ -2,7 +2,7 @@ import { Image, Linking, Platform, Pressable, StyleSheet, Text, View } from "rea
 import { Link } from "expo-router";
 
 const styles = StyleSheet.create({
-  icon: { width: 32, height: 32 },
+  icon: { width: 32, height: 32, opacity: 1 },
   socialButton: {
     width: 56,
     height: 56,

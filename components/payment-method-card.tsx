@@ -10,7 +10,7 @@ export interface PaymentMethodCardProps {
 }
 
 const styles = StyleSheet.create({
-  logo: { width: 56, height: 56 },
+  logo: { width: 56, height: 56, opacity: 1 },
   logoBox: {
     width: 72,
     height: 72,
