@@ -1,4 +1,4 @@
-import { Image, Linking, Pressable, StyleSheet, Text, View } from "react-native";
+import { Image, Linking, Platform, Pressable, StyleSheet, Text, View } from "react-native";
 import { Link } from "expo-router";
 
 const styles = StyleSheet.create({
@@ -30,14 +30,29 @@ const sectionLinks = [
   { label: "VIP · الخاصة", path: "/sector/vip" },
 ] as const;
 
+const webSocialAsset = (name: string) => ({ uri: `/lionx-mobile-Public/assets/social/${name}.png` });
+const nativeSocialAsset = (name: string) => {
+  const assets = {
+    facebook: require("@/assets/images/social/facebook.png"),
+    instagram: require("@/assets/images/social/instagram.png"),
+    tiktok: require("@/assets/images/social/tiktok.png"),
+    threads: require("@/assets/images/social/threads.png"),
+    telegram: require("@/assets/images/social/telegram.png"),
+    linkedin: require("@/assets/images/social/linkedin.png"),
+    whatsapp: require("@/assets/images/social/whatsapp.png"),
+  } as const;
+  return assets[name as keyof typeof assets];
+};
+const socialAsset = (name: string) => Platform.OS === "web" ? webSocialAsset(name) : nativeSocialAsset(name);
+
 const socialLinks = [
-  { name: "فيسبوك", image: require("@/assets/images/social/facebook.png"), url: "https://www.facebook.com/" },
-  { name: "إنستجرام", image: require("@/assets/images/social/instagram.png"), url: "https://www.instagram.com/" },
-  { name: "تيك توك", image: require("@/assets/images/social/tiktok.png"), url: "https://www.tiktok.com/" },
-  { name: "Threads", image: require("@/assets/images/social/threads.png"), url: "https://www.threads.net/" },
-  { name: "تليجرام", image: require("@/assets/images/social/telegram.png"), url: "https://t.me/" },
-  { name: "لينكدان", image: require("@/assets/images/social/linkedin.png"), url: "https://www.linkedin.com/" },
-  { name: "واتساب", image: require("@/assets/images/social/whatsapp.png"), url: "https://wa.me/201279332563" },
+  { name: "فيسبوك", image: socialAsset("facebook"), url: "https://www.facebook.com/" },
+  { name: "إنستجرام", image: socialAsset("instagram"), url: "https://www.instagram.com/" },
+  { name: "تيك توك", image: socialAsset("tiktok"), url: "https://www.tiktok.com/" },
+  { name: "Threads", image: socialAsset("threads"), url: "https://www.threads.net/" },
+  { name: "تليجرام", image: socialAsset("telegram"), url: "https://t.me/" },
+  { name: "لينكدان", image: socialAsset("linkedin"), url: "https://www.linkedin.com/" },
+  { name: "واتساب", image: socialAsset("whatsapp"), url: "https://wa.me/201279332563" },
 ];
 
 export function SocialFooter() {

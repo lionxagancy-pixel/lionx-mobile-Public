@@ -2,12 +2,23 @@ import * as Clipboard from "expo-clipboard";
 import * as DocumentPicker from "expo-document-picker";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useMemo, useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
+import { Platform, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 import { PaymentMethodCard } from "@/components/payment-method-card";
 import { ScreenContainer } from "@/components/screen-container";
 import { SocialFooter } from "@/components/social-footer";
 import { useLionxStore, type PaymentOperation } from "@/lib/lionx-store";
+
+const webPaymentAsset = (name: string) => ({ uri: `/lionx-mobile-Public/assets/payment/${name}.png` });
+const paymentAsset = (name: "vodafone-cash" | "orange-money" | "instapay") => {
+  if (Platform.OS === "web") return webPaymentAsset(name);
+  const assets = {
+    "vodafone-cash": require("@/assets/images/payment/vodafone-cash.png"),
+    "orange-money": require("@/assets/images/payment/orange-money.png"),
+    instapay: require("@/assets/images/payment/instapay.png"),
+  } as const;
+  return assets[name];
+};
 
 const paymentMethods = [
   {
@@ -15,21 +26,21 @@ const paymentMethods = [
     name: "Vodafone Cash",
     description: "حوّل إلى محفظة LIONX على Vodafone Cash ثم احتفظ بإيصال التحويل.",
     value: "01055861819",
-    logo: require("@/assets/images/payment/vodafone-cash.png"),
+    logo: paymentAsset("vodafone-cash"),
   },
   {
     id: "orange_money",
     name: "Orange Money",
     description: "حوّل إلى محفظة LIONX على Orange Money ثم أرفق إثبات العملية.",
     value: "01233309491",
-    logo: require("@/assets/images/payment/orange-money.png"),
+    logo: paymentAsset("orange-money"),
   },
   {
     id: "instapay",
     name: "InstaPay",
     description: "استخدم عنوان InstaPay الخاص بـ LIONX للتحويل اليدوي.",
     value: "maxabx3@instapay",
-    logo: require("@/assets/images/payment/instapay.png"),
+    logo: paymentAsset("instapay"),
   },
 ] as const;
 

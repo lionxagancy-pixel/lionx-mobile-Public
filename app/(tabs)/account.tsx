@@ -1,6 +1,7 @@
 import { Pressable, ScrollView, Text, View } from "react-native";
 import { useRouter } from "expo-router";
 import { ScreenContainer } from "@/components/screen-container";
+import { SocialFooter } from "@/components/social-footer";
 
 const groups = [
   {
@@ -79,6 +80,7 @@ export default function AccountScreen() {
             </View>
           </View>
         ))}
+        <SocialFooter />
       </ScrollView>
     </ScreenContainer>
   );
